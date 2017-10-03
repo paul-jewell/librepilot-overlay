@@ -1,0 +1,13 @@
+diff --git a/package/Linux.mk b/package/Linux.mk
+index 72a64510c..41c04f6d8 100644
+--- librepilot-9999/package/Linux.mk
++++ librepilot-9999/package/Linux.mk
+@@ -47,7 +47,7 @@ LN_S = ln -s
+ RM_RF = rm -rf
+ RM_F = rm -f
+ .PHONY: install
+-install: uninstall
++install:
+ 	@$(ECHO) " INSTALLING GCS TO $(DESTDIR)/)"
+ 	$(V1) $(MKDIR) -p $(DESTDIR)$(bindir)
+ 	$(V1) $(MKDIR) -p $(DESTDIR)$(libdir)

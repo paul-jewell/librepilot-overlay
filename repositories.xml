@@ -1,0 +1,15 @@
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>Librepilot</name>
+    <description lang="en">Librepilot flight control software overlay</description>
+    <homepage>https://github.com/paul-jewell/librepilot-overlay</homepage>
+    <owner type="person">
+      <email>teulupaul@gmail.com</email>
+      <name>Paul Jewell</name>
+    </owner>
+    <source type="git">https://github.com/paul-jewell/librepilot-overlay.git</source>
+    <source type="git">git://github.com/paul-jewell/librepilot-overlay.git</source>
+    <source type="git">git@github.com:paul-jewell/librepilot-overlay.git</source>
+    <feed>https://github.com/paul-jewell/librepilot-overlay/commits/master.atom</feed>
+  </repo>
+</repositories>

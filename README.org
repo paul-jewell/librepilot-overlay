@@ -1,0 +1,17 @@
+#+AUTHOR: Paul Jewell
+#+TITLE: Librepilot Gentoo Overlay
+
+* This overlay allows for installation of the librepilot flight control suite under gentoo linux. There is also an ebuild for osgearth-2.8, as there is no longer osgearth in Portage
+
+* Installation
+
+** Permanent
+
+Search for the config key ~overlay_defs~ in your ~/etc/layman/layman.cfg~ and
+change uncomment it. Please note down the path that was given there (usually
+~/etc/layman/overlays~).
+
+#+BEGIN_SRC shell-script
+  curl -L https://github.com/NobbZ/gentoo-overlay/raw/master/repositories.xml > /etc/layman/overlays/nobbz.xml
+  layman -f -a NobbZ
+#+END_SRC
