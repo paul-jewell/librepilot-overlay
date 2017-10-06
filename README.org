@@ -1,7 +1,8 @@
 #+AUTHOR: Paul Jewell
 #+TITLE: Librepilot Gentoo Overlay
 
-* This overlay allows for installation of the librepilot flight control suite under gentoo linux. There is also an ebuild for osgearth-2.8, as there is no longer osgearth in Portage
+* Description
+** This overlay allows for installation of the librepilot flight control suite under gentoo linux. There is also an ebuild for osgearth-2.8, as there is no longer osgearth in Portage
 
 * Installation
 
