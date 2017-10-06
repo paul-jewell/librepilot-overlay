@@ -12,6 +12,6 @@ change uncomment it. Please note down the path that was given there (usually
 ~/etc/layman/overlays~).
 
 #+BEGIN_SRC shell-script
-  curl -L https://github.com/NobbZ/gentoo-overlay/raw/master/repositories.xml > /etc/layman/overlays/nobbz.xml
-  layman -f -a NobbZ
+  curl -L https://github.com/NobbZ/gentoo-overlay/raw/master/repositories.xml > /etc/layman/overlays/librepilot-overlay.xml
+  layman -f -a Librepilot 
 #+END_SRC
