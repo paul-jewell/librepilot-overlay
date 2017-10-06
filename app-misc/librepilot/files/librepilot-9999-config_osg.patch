@@ -1,0 +1,7 @@
+diff -Naur librepilot_osg/config librepilot/config
+--- config       1970-01-01 01:00:00.000000000 +0100
++++ config   2017-09-28 21:37:01.441244029 +0200
+@@ -0,0 +1,2 @@
++override GCS_EXTRA_CONF=osg osgearth copy_osg
++
+

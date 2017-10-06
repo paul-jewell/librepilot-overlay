@@ -11,35 +11,32 @@ HOMEPAGE="http://librepilot.org/"
 
 EGIT_REPO_URI="https://bitbucket.org/librepilot/librepilot.git"
 
-if [[ "${PV}" = "9999" ]]; then
-#	#EGIT_REPO_URI="git@bitbucket.org:librepilot/librepilot.git"
-else
-	KEYWORDS="~amd64 ~x86" # Note: x86 NOT tested
+if [[ "${PV}" != "9999" ]]; then
+	KEYWORDS="~amd64 ~x86"  # Note: ~x86 NOT tested
 fi
+
 # TODO: Check if this is needed lower down when setting up with tagged versions
 #    S=${WORKDIR}/${PN}-${P}
 
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
 REQUIRED_USE="qt5"
 IUSE="doc qt5 osg"
 
 RDEPEND="
-   osg? (
-   		sci-geosciences/osgearth
-        >=dev-games/openscenegraph-3.2.1
-   sci-libs/gdal
-   sci-libs/geos )
-   x11-libs/libX11
-   dev-qt/qtcore:5
-   dev-qt/qtgui:5
-   dev-qt/qtopengl:5
-   dev-qt/qtserialport
-   doc? (
-   	app-doc/doxygen )
-   "
+	osg? ( sci-geosciences/osgearth
+   		>=dev-games/openscenegraph-3.2.1
+   		sci-libs/gdal
+   		sci-libs/geos )
+   	x11-libs/libX11
+   	dev-qt/qtcore:5
+   	dev-qt/qtgui:5
+   	dev-qt/qtopengl:5
+   	dev-qt/qtserialport
+   	doc? (
+   		app-doc/doxygen )
+   	"
 
 DEPEND="${RDEPEND}"
 
@@ -59,12 +56,11 @@ src_unpack() {
 		git-r3_fetch "${EGIT_REPO_URI}" "${EGIT_COMMIT}"
 		git-r3_checkout
 	fi
-
 }
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-remove_uninstall.patch"
-	use osg && epatch "${FILESDIR}/${P}-osg_config.patch"
+	use osg && epatch "${FILESDIR}/${P}-config_osg.patch"
 	eapply_user
 }
 
