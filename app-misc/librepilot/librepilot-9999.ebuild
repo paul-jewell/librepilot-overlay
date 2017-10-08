@@ -84,3 +84,9 @@ src_install() {
 	doenvd ${FILESDIR}/99librepilot
 }
 
+pkg_postinst() {
+	elog "During the installation, an environment variable is set to ensure the"
+	elog "correct google satellite version is used. This is not present in the "
+	elog "environment until you log out and back in."
+}
+
