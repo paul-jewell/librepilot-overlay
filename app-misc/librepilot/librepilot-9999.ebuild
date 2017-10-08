@@ -81,5 +81,6 @@ src_compile() {
 
 src_install() {
     emake DESTDIR="${D}" install
+	doenvd ${FILESDIR}/99librepilot
 }
 
