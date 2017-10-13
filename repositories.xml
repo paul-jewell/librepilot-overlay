@@ -1,6 +1,6 @@
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
-    <name>Librepilot</name>
+    <name>librepilot</name>
     <description lang="en">Librepilot flight control software overlay</description>
     <homepage>https://github.com/paul-jewell/librepilot-overlay</homepage>
     <owner type="person">
