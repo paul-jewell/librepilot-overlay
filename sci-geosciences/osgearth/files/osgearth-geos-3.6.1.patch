@@ -1,3 +1,6 @@
+These patches are attributed to filnet - he developed them as part of his work on osgearth.
+Details here: https://github.com/filnet/MINGW-packages/blob/74f22c0137d358a8631b915183385251711dd324/mingw-w64-osgearth/0002-geos-3_6_1-support.patch
+
 diff -Naur osgearth-osgearth-2.8-original/src/osgEarthSymbology/GEOS osgearth-osgearth-2.8/src/osgEarthSymbology/GEOS
 --- osgearth-osgearth-2.8-original/src/osgEarthSymbology/GEOS	2016-09-15 16:19:21.000000000 +0200
 +++ osgearth-osgearth-2.8/src/osgEarthSymbology/GEOS	2017-10-03 21:19:51.166008933 +0200
