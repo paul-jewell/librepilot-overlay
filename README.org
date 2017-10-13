@@ -6,13 +6,34 @@
 
 * Installation
 
-** Permanent
+A pull request has been issued to add librepilot to the official overlay list, accessible from layman, so try this first:
+#+BEGIN_SRC shell-script
+  layman -L librepilot | grep librepilot
+#+END_SRC
+
+If the output to this command is empty, proceed with the instructions below to add the repositories.xml file locally on your system.
+
+Otherwise, run the command:
+#+BEGIN_SRC shell-script
+  layman -s librepilot
+#+END_SRC
+
+You can then proceed to install the package in the usual manner:
+
+#+BEGIN_SRC shell-script
+  emerge -av app-misc/librepilot
+#+END_SRC
+
+taking note of the changes needed to the use flags etc.
+
+** librepilot overlay not yet added to the official overlay list
 
 Search for the config key ~overlay_defs~ in your ~/etc/layman/layman.cfg~ and
 change uncomment it. Please note down the path that was given there (usually
 ~/etc/layman/overlays~).
 
 #+BEGIN_SRC shell-script
-  curl -L https://github.com/NobbZ/gentoo-overlay/raw/master/repositories.xml > /etc/layman/overlays/librepilot-overlay.xml
+  curl -L https://github.com/paul-jewell/gentoo-overlay/raw/master/repositories.xml > /etc/layman/overlays/librepilot-overlay.xml
   layman -f -a Librepilot 
 #+END_SRC
+
