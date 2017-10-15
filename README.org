@@ -6,16 +6,9 @@
 
 * Installation
 
-A pull request has been issued to add librepilot to the official overlay list, accessible from layman, so try this first:
+Run the command:
 #+BEGIN_SRC shell-script
-  layman -L librepilot | grep librepilot
-#+END_SRC
-
-If the output to this command is empty, proceed with the instructions below to add the repositories.xml file locally on your system.
-
-Otherwise, run the command:
-#+BEGIN_SRC shell-script
-  layman -s librepilot
+  layman -a librepilot
 #+END_SRC
 
 You can then proceed to install the package in the usual manner:
