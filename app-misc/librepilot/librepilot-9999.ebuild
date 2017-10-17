@@ -21,7 +21,7 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-REQUIRED_USE="qt5"
+REQUIRED_USE="qt5 osg"
 IUSE="doc qt5 osg"
 
 RDEPEND="
