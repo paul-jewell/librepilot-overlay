@@ -17,7 +17,7 @@ IUSE="doc qt5"
 
 RDEPEND="
 	dev-db/sqlite:3
-	>=dev-games/openscenegraph-3.5.5[curl]
+	>=dev-games/openscenegraph-3.2.1-r1[curl,qt5?]
 	dev-libs/protobuf
 	dev-libs/tinyxml
 	net-misc/curl
