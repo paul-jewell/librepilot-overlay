@@ -18,7 +18,7 @@ fi
 # TODO: Check if this is needed lower down when setting up with tagged versions
 #    S=${WORKDIR}/${PN}-${P}
 
-
+RESTRICT="network-sandbox"
 LICENSE="GPL-3"
 SLOT="0"
 REQUIRED_USE="qt5"
@@ -26,20 +26,20 @@ IUSE="doc qt5 osg"
 
 RDEPEND="
 	osg? ( sci-geosciences/osgearth
-   		>=dev-games/openscenegraph-3.2.1
-   		sci-libs/gdal
-   		sci-libs/geos )
-   	x11-libs/libX11
-   	dev-qt/qtcore:5
-   	dev-qt/qtgui:5
-   	dev-qt/qtopengl:5
-   	dev-qt/qtserialport:5
+		>=dev-games/openscenegraph-3.2.1
+		sci-libs/gdal
+		sci-libs/geos )
+	x11-libs/libX11
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtopengl:5
+	dev-qt/qtserialport:5
 	dev-qt/qtdeclarative:5
 	dev-qt/qtwebkit:5
 	dev-qt/qtprintsupport:5
 	doc? (
-   		app-doc/doxygen )
-   	"
+		app-doc/doxygen )
+	"
 
 DEPEND="${RDEPEND}"
 
@@ -68,24 +68,24 @@ src_prepare() {
 }
 
 src_compile() {
-    # Need to get the tools first, which don't get installed in main system
-    # The following tools are assumed to be installed:
-    #  - qt5
-    #  - doxygen (if required - set / unset doc flag)
-    #  - osg     (dev-games/openscenegraph)
-    #  - osgearth (Not in main tree - see separate ebuild)
-    
-    # The arm_sdk package will be installed, to avoid challenges with
-    # crossdev
-    
-    make arm_sdk_install && QT_SELECT=5 make all
+	# Need to get the tools first, which don't get installed in main system
+	# The following tools are assumed to be installed:
+	#  - qt5
+	#  - doxygen (if required - set / unset doc flag)
+	#  - osg     (dev-games/openscenegraph)
+	#  - osgearth (Not in main tree - see separate ebuild)
+
+	# The arm_sdk package will be installed, to avoid challenges with
+	# crossdev
+
+	make arm_sdk_install && QT_SELECT=5 make all
 
 	# TODO:: Add building of the doc files
 }
 
 
 src_install() {
-    emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install
 	doenvd ${FILESDIR}/99librepilot
 	# TODO:: Add installation of the doc files
 }
