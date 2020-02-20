@@ -22,7 +22,7 @@ RDEPEND="
 	net-misc/curl
 	!dev-libs/tinyxml
 	sci-libs/gdal
-	sci-libs/geos
+	<=sci-libs/geos-3.7.2
 	sys-libs/zlib[minizip]
 	virtual/opengl
 	x11-libs/libX11
