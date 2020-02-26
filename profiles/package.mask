@@ -33,3 +33,8 @@
 # Live ebuild branch.
 >=app-misc/librepilot-9999
 
+# Paul Jewell <teulupaul@gmail.com> (26/02/2020)
+# 2.10.1 version fails to build - function mis-match with 
+# Geos version 3.8.0-r1. Issue raised upstream - awaiting 
+# resolution
+>sci-geosciences/osgearth-2.10
