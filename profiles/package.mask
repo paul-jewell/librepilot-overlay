@@ -38,5 +38,5 @@
 # but gdal-2.x is not available in portage
 # - compatibility with gdal-3.x currently under
 # development upstream
->=sci-geosciences/osgearth-3.0
+>=sci-geosciences/osgearth-3.2
 
