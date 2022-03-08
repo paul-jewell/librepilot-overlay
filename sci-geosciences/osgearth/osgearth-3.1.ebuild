@@ -20,7 +20,6 @@ RDEPEND="
 	>=dev-games/openscenegraph-3.5.5[curl]
 	dev-libs/protobuf
 	net-misc/curl
-	!dev-libs/tinyxml
 	sci-libs/gdal
 	sci-libs/geos
 	sys-libs/zlib[minizip]
