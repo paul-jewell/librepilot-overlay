@@ -46,7 +46,7 @@ src_configure() {
 	# V8 disabled due to
 	# https://github.com/gwaldron/osgearth/issues/333
 	local mycmakeargs=(
-		-DWITH_EXTERNAL_TINYXML=ON
+		-DWITH_EXTERNAL_TINYXML=OFF
 		$(cmake-utils_use qt5 OSGEARTH_USE_QT)
 		-DUSE_V8=OFF
 		-DOSGEARTH_USE_JAVASCRIPTCORE=OFF
