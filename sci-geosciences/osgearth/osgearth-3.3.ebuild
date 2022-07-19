@@ -2,13 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
-inherit cmake-utils
+inherit cmake git-r3
 
 DESCRIPTION="Dynamic map generation toolkit for OpenSceneGraph"
 HOMEPAGE="http://osgearth.org/"
-SRC_URI="https://github.com/gwaldron/osgearth/archive/${P}.tar.gz"
+#SRC_URI="https://github.com/gwaldron/osgearth/archive/${P}.tar.gz"
+
+EGIT_REPO_URI="https://github.com/gwaldron/osgearth/"
+EGIT_COMMIT="${P}"
+EGIT_MIN_CLONE_TYPE="shallow"
 
 LICENSE="LGPL-2+"
 SLOT="0"
@@ -20,7 +24,6 @@ RDEPEND="
 	>=dev-games/openscenegraph-3.5.5[curl]
 	dev-libs/protobuf
 	net-misc/curl
-	!dev-libs/tinyxml
 	sci-libs/gdal
 	sci-libs/geos
 	sys-libs/zlib[minizip]
@@ -36,7 +39,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	doc? ( dev-python/sphinx )"
 
-S=${WORKDIR}/${PN}-${P}
+S=${WORKDIR}/${P}
 
 PATCHES=(
 #	"${FILESDIR}"/${PN}-geos-3.6.1.patch
@@ -47,17 +50,16 @@ src_configure() {
 	# V8 disabled due to
 	# https://github.com/gwaldron/osgearth/issues/333
 	local mycmakeargs=(
-		-DWITH_EXTERNAL_TINYXML=ON
-		$(cmake-utils_use qt5 OSGEARTH_USE_QT)
-		-DUSE_V8=OFF
-		-DOSGEARTH_USE_JAVASCRIPTCORE=OFF
+		-DWITH_EXTERNAL_TINYXML=OFF
+		-DOpenGL_GL_PREFERENCE=GLVND
+		-DCMAKE_INSTALL_LOCAL_ONLY=1
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 
 	if use doc ; then
 		emake -C "${S}"/docs man html info
@@ -65,7 +67,7 @@ src_compile() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	if use doc ; then
 		dohtml -r "${S}"/docs/build/html/*
