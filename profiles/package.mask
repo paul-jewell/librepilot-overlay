@@ -33,10 +33,3 @@
 # Live ebuild branch.
 >=app-misc/librepilot-9999
 
-# Paul Jewell <paul@teulu.org> (26/02/2020)
-# 3.0 version fails needs <gdal-3.0 to build,
-# but gdal-2.x is not available in portage
-# - compatibility with gdal-3.x currently under
-# development upstream
->=sci-geosciences/osgearth-3.2
-
