@@ -1,0 +1,17 @@
+
+--- a/CMakeLists.txt  2022-07-21 01:03:05.817749266 +0000
++++ b/CMakeLists.txt      2022-07-21 01:06:22.029118734 +0000
+@@ -1,5 +1,7 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 3.1 FATAL_ERROR)
+
++include(GNUInstallDirs)
++
+ if(COMMAND cmake_policy)
+     # Works around warnings libraries linked against that don't
+     # have absolute paths (e.g. -lpthreads)
+@@ -328,4 +330,4 @@
+   COMPATIBILITY SameMajorVersion )
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/osgEarthConfig.cmake
+               ${CMAKE_CURRENT_BINARY_DIR}/osgEarthConfigVersion.cmake
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/cmake )
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake ) 

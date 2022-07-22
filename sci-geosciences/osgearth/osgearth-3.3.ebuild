@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${P}
 
 PATCHES=(
-#	"${FILESDIR}"/${PN}-geos-3.6.1.patch
+	"${FILESDIR}"/${PN}-cmake-file-install-3.3.patch
 #	"${FILESDIR}"/${PN}-2.7-linker.patch
 )
 
@@ -52,7 +52,6 @@ src_configure() {
 	local mycmakeargs=(
 		-DWITH_EXTERNAL_TINYXML=OFF
 		-DOpenGL_GL_PREFERENCE=GLVND
-		-DCMAKE_INSTALL_LOCAL_ONLY=1
 	)
 
 	cmake_src_configure
