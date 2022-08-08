@@ -34,15 +34,19 @@ RDEPEND="
 		dev-qt/qtgui:5
 		dev-qt/qtopengl:5
 		>=dev-games/openscenegraph-qt-3.5.5
+	)
+	doc? (
+		dev-python/recommonmark
 	)"
-DEPEND="${RDEPEND}
+
+RDEPEND="${RDEPEND}
 	virtual/pkgconfig
 	doc? ( dev-python/sphinx )"
 
 S=${WORKDIR}/${P}
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-cmake-file-install-3.3.patch
+	"${FILESDIR}"/${PN}-3.3-cmake-gnuinstalldirs.patch
 #	"${FILESDIR}"/${PN}-2.7-linker.patch
 )
 
