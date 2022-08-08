@@ -37,6 +37,7 @@ RDEPEND="
 	)
 	doc? (
 		dev-python/recommonmark
+		dev-python/sphinx-markdown-tables
 	)"
 
 RDEPEND="${RDEPEND}
