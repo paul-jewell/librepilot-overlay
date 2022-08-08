@@ -1,0 +1,10 @@
+--- a/setup.py	2022-08-08 17:36:34.015359769 +0100
++++ b/setup.py	2022-08-08 17:36:47.166068615 +0100
+@@ -29,7 +29,6 @@
+     keywords='sphinx markdown tables',
+     packages=['sphinx_markdown_tables'],
+     install_requires=['markdown>=3.4'],
+-    data_files=[('', ['LICENSE'])],
+     project_urls={
+         'Bug Reports': 'https://github.com/ryanfox/sphinx-markdown-tables/issues',
+         'Say Thanks!': 'https://foxrow.com',
