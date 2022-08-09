@@ -74,7 +74,8 @@ src_install() {
 	cmake_src_install
 
 	if use doc ; then
-		dohtml -r "${S}"/docs/build/html/*
+		docinto html
+		dodoc -r "${S}"/docs/build/html/*
 		doman "${S}"/docs/build/man/*
 		doinfo "${S}"/docs/build/texinfo/*.info*
 	fi
